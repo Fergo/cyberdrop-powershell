@@ -5,7 +5,7 @@ param (
 )
 
 $title = Split-Path $url -leaf
-Write-Output "Downloading album $title..."
+Write-Output "Downloading folder $title..."
 
 $links = (Invoke-WebRequest -Uri $url).Links | Where-Object {$_.id -eq "file"} | ForEach-Object {$_.href}
 
